@@ -1,6 +1,6 @@
 {
   "name": "event-registrar",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "description": "This library provides a simple and convenient way to register multiple DOM event handlers, including multiple handlers on the same event",
   "main": "index.js",
   "scripts": {

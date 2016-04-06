@@ -52,7 +52,7 @@ export default class EventRegistrar {
 	}
 
 	setupCallback (target, event) {
-		element[event] = function () {
+		target[event] = function () {
 			var args = arguments;
 			this.registry[event].forEach( cb => cb.apply(args) );
 		}.bind(this);

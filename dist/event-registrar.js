@@ -32,7 +32,9 @@ var EventRegistrar = function () {
    * @return Function an unsubscribe function
    * @description
    * Provides a way to register a callback to be fired when the specified event is triggered.
-   * Generally should be used as a Singleton through a dependency injection container
+   * Generally should be used as a Singleton through a dependency injection container.
+   *
+   * For more information about the EventTarget type, check out the {@link https://developer.mozilla.org/en-US/docs/Web/API/EventTarget|MDN docs}.
    * @example
    * const registrar = new EventRegistrar();
    * // register
@@ -66,7 +68,7 @@ var EventRegistrar = function () {
   }, {
     key: "setupCallback",
     value: function setupCallback(target, event) {
-      element[event] = function () {
+      target[event] = function () {
         var args = arguments;
         this.registry[event].forEach(function (cb) {
           return cb.apply(args);
